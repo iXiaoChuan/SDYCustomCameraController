@@ -59,9 +59,9 @@
     return UIStatusBarStyleDefault;
 }
 
-- (BOOL)prefersStatusBarHidden{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden{
+//    return YES;
+//}
 
 - (void)dealloc {
     self.originalImage = nil;

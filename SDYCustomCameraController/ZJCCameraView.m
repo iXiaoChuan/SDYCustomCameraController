@@ -11,6 +11,9 @@
 #import "ZJCCameraToolsCenter.h"
 #import "UIView+ZJCAdditions.h"
 
+#define SELF_WIDTH self.bounds.size.width
+#define SELF_HEIGHT self.bounds.size.height
+
 @interface ZJCCameraView (){
     NSInteger _flashButtonStatus;
 }

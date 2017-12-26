@@ -67,13 +67,17 @@
     _imageOutput = nil;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (BOOL)prefersStatusBarHidden{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden{
+//    return YES;
+//}
 
 #pragma mark - Set Base And UI
 - (void)setZJCCameraViewControllerBase{
@@ -83,6 +87,11 @@
 }
 
 - (void)setZJCCameraViewControllerUI{
+    if ([UIApplication sharedApplication].statusBarHidden == YES) {
+        self.cameraView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    }else{
+        self.cameraView.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT-20);
+    }
     [self.view addSubview:self.cameraView];
     
 }
@@ -149,6 +158,7 @@
         }else{
             if ([self.delegate respondsToSelector:@selector(imagePicker:didFinishi:)]) {
                 [self.delegate imagePicker:self didFinishi:image];
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
             
         }
