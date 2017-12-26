@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3700B7F81F8F12A600AA434B /* UIView+ZJCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3700B7F71F8F12A600AA434B /* UIView+ZJCAdditions.m */; };
+		371245191FB98B8E002278F1 /* ZJCCameraCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371245181FB98B8E002278F1 /* ZJCCameraCropViewController.m */; };
+		37421FBA1F8E0A8300723910 /* ZJCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37421FB91F8E0A8300723910 /* ZJCCameraViewController.m */; };
+		37421FBD1F8E104800723910 /* ZJCVideoPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 37421FBC1F8E104800723910 /* ZJCVideoPreview.m */; };
+		379AE41A1F8DF36A00BA0915 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 379AE4191F8DF36A00BA0915 /* main.m */; };
+		379AE41D1F8DF36A00BA0915 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 379AE41C1F8DF36A00BA0915 /* AppDelegate.m */; };
+		379AE4201F8DF36A00BA0915 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379AE41F1F8DF36A00BA0915 /* ViewController.m */; };
+		379AE4251F8DF36A00BA0915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379AE4241F8DF36A00BA0915 /* Assets.xcassets */; };
+		379AE4281F8DF36A00BA0915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379AE4261F8DF36A00BA0915 /* LaunchScreen.storyboard */; };
+		379AE4441F8E021E00BA0915 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AE4431F8E021E00BA0915 /* QuartzCore.framework */; };
+		379AE4471F8E07BC00BA0915 /* ZJCCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379AE4461F8E07BC00BA0915 /* ZJCCameraView.m */; };
+		37E337871F90945B001ACE67 /* ZJCMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E337861F90945B001ACE67 /* ZJCMotionManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3700B7F61F8F12A600AA434B /* UIView+ZJCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJCAdditions.h"; sourceTree = "<group>"; };
+		3700B7F71F8F12A600AA434B /* UIView+ZJCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJCAdditions.m"; sourceTree = "<group>"; };
+		3700B7FE1F8F1E6D00AA434B /* ZJCCameraToolsCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCCameraToolsCenter.h; sourceTree = "<group>"; };
+		371245171FB98B8E002278F1 /* ZJCCameraCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCCameraCropViewController.h; sourceTree = "<group>"; };
+		371245181FB98B8E002278F1 /* ZJCCameraCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCCameraCropViewController.m; sourceTree = "<group>"; };
+		37421FB81F8E0A8300723910 /* ZJCCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCCameraViewController.h; sourceTree = "<group>"; };
+		37421FB91F8E0A8300723910 /* ZJCCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCCameraViewController.m; sourceTree = "<group>"; };
+		37421FBB1F8E104800723910 /* ZJCVideoPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCVideoPreview.h; sourceTree = "<group>"; };
+		37421FBC1F8E104800723910 /* ZJCVideoPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCVideoPreview.m; sourceTree = "<group>"; };
+		379AE4151F8DF36A00BA0915 /* SDYCustomCameraController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDYCustomCameraController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		379AE4191F8DF36A00BA0915 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		379AE41B1F8DF36A00BA0915 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		379AE41C1F8DF36A00BA0915 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		379AE41E1F8DF36A00BA0915 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		379AE41F1F8DF36A00BA0915 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		379AE4241F8DF36A00BA0915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		379AE4271F8DF36A00BA0915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		379AE4291F8DF36A00BA0915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379AE4431F8E021E00BA0915 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		379AE4451F8E07BC00BA0915 /* ZJCCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCCameraView.h; sourceTree = "<group>"; };
+		379AE4461F8E07BC00BA0915 /* ZJCCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCCameraView.m; sourceTree = "<group>"; };
+		37E337851F90945B001ACE67 /* ZJCMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCMotionManager.h; sourceTree = "<group>"; };
+		37E337861F90945B001ACE67 /* ZJCMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCMotionManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		379AE4121F8DF36A00BA0915 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				379AE4441F8E021E00BA0915 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3700B7F41F8F125600AA434B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				37E337841F9093EB001ACE67 /* PublicTool */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		379AE40C1F8DF36A00BA0915 = {
+			isa = PBXGroup;
+			children = (
+				379AE4171F8DF36A00BA0915 /* SDYCustomCameraController */,
+				379AE4181F8DF36A00BA0915 /* Supporting Files */,
+				379AE4161F8DF36A00BA0915 /* Products */,
+				379AE4421F8E021E00BA0915 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		379AE4161F8DF36A00BA0915 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				379AE4151F8DF36A00BA0915 /* SDYCustomCameraController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		379AE4171F8DF36A00BA0915 /* SDYCustomCameraController */ = {
+			isa = PBXGroup;
+			children = (
+				3700B7F41F8F125600AA434B /* Tools */,
+				371245171FB98B8E002278F1 /* ZJCCameraCropViewController.h */,
+				371245181FB98B8E002278F1 /* ZJCCameraCropViewController.m */,
+				379AE4451F8E07BC00BA0915 /* ZJCCameraView.h */,
+				379AE4461F8E07BC00BA0915 /* ZJCCameraView.m */,
+				37421FB81F8E0A8300723910 /* ZJCCameraViewController.h */,
+				37421FB91F8E0A8300723910 /* ZJCCameraViewController.m */,
+			);
+			path = SDYCustomCameraController;
+			sourceTree = "<group>";
+		};
+		379AE4181F8DF36A00BA0915 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				379AE41B1F8DF36A00BA0915 /* AppDelegate.h */,
+				379AE41C1F8DF36A00BA0915 /* AppDelegate.m */,
+				379AE41E1F8DF36A00BA0915 /* ViewController.h */,
+				379AE41F1F8DF36A00BA0915 /* ViewController.m */,
+				379AE4241F8DF36A00BA0915 /* Assets.xcassets */,
+				379AE4261F8DF36A00BA0915 /* LaunchScreen.storyboard */,
+				379AE4291F8DF36A00BA0915 /* Info.plist */,
+				379AE4191F8DF36A00BA0915 /* main.m */,
+			);
+			name = "Supporting Files";
+			path = SDYCustomCameraController;
+			sourceTree = "<group>";
+		};
+		379AE4421F8E021E00BA0915 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				379AE4431F8E021E00BA0915 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37E337841F9093EB001ACE67 /* PublicTool */ = {
+			isa = PBXGroup;
+			children = (
+				3700B7FE1F8F1E6D00AA434B /* ZJCCameraToolsCenter.h */,
+				37E337851F90945B001ACE67 /* ZJCMotionManager.h */,
+				37E337861F90945B001ACE67 /* ZJCMotionManager.m */,
+				3700B7F61F8F12A600AA434B /* UIView+ZJCAdditions.h */,
+				3700B7F71F8F12A600AA434B /* UIView+ZJCAdditions.m */,
+				37421FBB1F8E104800723910 /* ZJCVideoPreview.h */,
+				37421FBC1F8E104800723910 /* ZJCVideoPreview.m */,
+			);
+			name = PublicTool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		379AE4141F8DF36A00BA0915 /* SDYCustomCameraController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 379AE42C1F8DF36A00BA0915 /* Build configuration list for PBXNativeTarget "SDYCustomCameraController" */;
+			buildPhases = (
+				379AE4111F8DF36A00BA0915 /* Sources */,
+				379AE4121F8DF36A00BA0915 /* Frameworks */,
+				379AE4131F8DF36A00BA0915 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDYCustomCameraController;
+			productName = SDYCustomCameraController;
+			productReference = 379AE4151F8DF36A00BA0915 /* SDYCustomCameraController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		379AE40D1F8DF36A00BA0915 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = sposter.net;
+				TargetAttributes = {
+					379AE4141F8DF36A00BA0915 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = Q775ZXKAM6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 379AE4101F8DF36A00BA0915 /* Build configuration list for PBXProject "SDYCustomCameraController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 379AE40C1F8DF36A00BA0915;
+			productRefGroup = 379AE4161F8DF36A00BA0915 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				379AE4141F8DF36A00BA0915 /* SDYCustomCameraController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		379AE4131F8DF36A00BA0915 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				379AE4281F8DF36A00BA0915 /* LaunchScreen.storyboard in Resources */,
+				379AE4251F8DF36A00BA0915 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		379AE4111F8DF36A00BA0915 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371245191FB98B8E002278F1 /* ZJCCameraCropViewController.m in Sources */,
+				379AE4201F8DF36A00BA0915 /* ViewController.m in Sources */,
+				379AE41D1F8DF36A00BA0915 /* AppDelegate.m in Sources */,
+				37E337871F90945B001ACE67 /* ZJCMotionManager.m in Sources */,
+				37421FBD1F8E104800723910 /* ZJCVideoPreview.m in Sources */,
+				379AE41A1F8DF36A00BA0915 /* main.m in Sources */,
+				3700B7F81F8F12A600AA434B /* UIView+ZJCAdditions.m in Sources */,
+				37421FBA1F8E0A8300723910 /* ZJCCameraViewController.m in Sources */,
+				379AE4471F8E07BC00BA0915 /* ZJCCameraView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		379AE4261F8DF36A00BA0915 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				379AE4271F8DF36A00BA0915 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		379AE42A1F8DF36A00BA0915 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		379AE42B1F8DF36A00BA0915 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		379AE42D1F8DF36A00BA0915 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q775ZXKAM6;
+				INFOPLIST_FILE = SDYCustomCameraController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sposter.SDYCustomCameraController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		379AE42E1F8DF36A00BA0915 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q775ZXKAM6;
+				INFOPLIST_FILE = SDYCustomCameraController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sposter.SDYCustomCameraController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		379AE4101F8DF36A00BA0915 /* Build configuration list for PBXProject "SDYCustomCameraController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				379AE42A1F8DF36A00BA0915 /* Debug */,
+				379AE42B1F8DF36A00BA0915 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		379AE42C1F8DF36A00BA0915 /* Build configuration list for PBXNativeTarget "SDYCustomCameraController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				379AE42D1F8DF36A00BA0915 /* Debug */,
+				379AE42E1F8DF36A00BA0915 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 379AE40D1F8DF36A00BA0915 /* Project object */;
+}
