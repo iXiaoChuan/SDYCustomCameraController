@@ -204,12 +204,12 @@
         }
     }
     
-    // 音频输入
-    AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
-    AVCaptureDeviceInput *audioIn = [[AVCaptureDeviceInput alloc] initWithDevice:audioDevice error:error];
-    if ([_captureSession canAddInput:audioIn]){
-        [_captureSession addInput:audioIn];
-    }
+//    // 音频输入
+//    AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
+//    AVCaptureDeviceInput *audioIn = [[AVCaptureDeviceInput alloc] initWithDevice:audioDevice error:error];
+//    if ([_captureSession canAddInput:audioIn]){
+//        [_captureSession addInput:audioIn];
+//    }
 }
 
 // 添加输出
