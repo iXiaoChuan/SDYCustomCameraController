@@ -141,27 +141,24 @@
     }
     id takePictureSuccess = ^(CMSampleBufferRef sampleBuffer,NSError *error){
         if (sampleBuffer == NULL) {
-            // 错误处理
+            // TODO:错误处理
             return ;
         }
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:sampleBuffer];
         UIImage *image = [[UIImage alloc] initWithData:imageData];
         
         // FIXME: 跳转图片裁切控制器
+        CGRect cropframe = CGRectZero;
         if (self.isAllowEditing) {
-            ZJCCameraCropViewController *imgCropperVC = [[ZJCCameraCropViewController alloc] initWithImage:image cropFrame:CGRectMake(0, 100.0f, self.view.frame.size.width, self.view.frame.size.width) limitScaleRatio:3.0];
-            imgCropperVC.delegate = self;
-            [self presentViewController:imgCropperVC animated:YES completion:^{
-                
-            }];
-
+            cropframe = CGRectMake(0, (SCREEN_HEIGHT - SCREEN_WIDTH)/2, SCREEN_WIDTH, SCREEN_WIDTH);
         }else{
-            if ([self.delegate respondsToSelector:@selector(imagePicker:didFinishi:)]) {
-                [self.delegate imagePicker:self didFinishi:image];
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-            
+            cropframe = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         }
+        ZJCCameraCropViewController *imgCropperVC = [[ZJCCameraCropViewController alloc] initWithImage:image cropFrame:cropframe limitScaleRatio:3.0 isAllowEditing:self.isAllowEditing];
+        imgCropperVC.delegate = self;
+        [self presentViewController:imgCropperVC animated:YES completion:^{
+            
+        }];
         
     };
     [_imageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:takePictureSuccess];

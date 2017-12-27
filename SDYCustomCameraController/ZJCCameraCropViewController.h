@@ -26,6 +26,6 @@
 /** clip rect */
 @property (assign, nonatomic) CGRect cropFrame;
 
-- (instancetype)initWithImage:(UIImage *)originalImage cropFrame:(CGRect)cropFrame limitScaleRatio:(NSInteger)linmitRatio;
+- (instancetype)initWithImage:(UIImage *)originalImage cropFrame:(CGRect)cropFrame limitScaleRatio:(NSInteger)linmitRatio isAllowEditing:(BOOL)allowEditing;
 
 @end

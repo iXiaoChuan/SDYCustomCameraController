@@ -14,34 +14,41 @@
 
 @interface ZJCCameraCropViewController ()
 
-/** origin image */
+/** 原始照片 */
 @property (nonatomic, strong) UIImage *originalImage;
-/**  */
+/** 编辑照片 */
 @property (nonatomic, strong) UIImage *editedImage;
-/** the imageView show on screen */
+
+/** 照片视图 */
 @property (nonatomic, strong) UIImageView *showImgView;
-/**  */
+/** 预览视图 */
 @property (nonatomic, strong) UIView *overlayView;
-/**  */
+/** 截屏框视图 */
 @property (nonatomic, strong) UIView *ratioView;
-/**  */
+
+/** 原图尺寸 */
 @property (nonatomic, assign) CGRect oldFrame;
-/**  */
+/** 最大尺寸 */
 @property (nonatomic, assign) CGRect largeFrame;
-/**  */
-@property (nonatomic, assign) CGFloat limitRatio;
-/**  */
+/** 最终尺寸 */
 @property (nonatomic, assign) CGRect latestFrame;
+
+/** 缩放比例 */
+@property (nonatomic, assign) CGFloat limitRatio;
+/** 是否可以编辑 */
+@property (assign, nonatomic) BOOL isAllowEditing;
 
 @end
 
 @implementation ZJCCameraCropViewController
 
-- (instancetype)initWithImage:(UIImage *)originalImage cropFrame:(CGRect)cropFrame limitScaleRatio:(NSInteger)limitRatio {
+- (instancetype)initWithImage:(UIImage *)originalImage cropFrame:(CGRect)cropFrame limitScaleRatio:(NSInteger)linmitRatio isAllowEditing:(BOOL)allowEditing {
     self = [super init];
     if (self) {
+        self.isAllowEditing = allowEditing;
         self.cropFrame = cropFrame;
-        self.limitRatio = limitRatio;
+        self.limitRatio = linmitRatio;
+        /** 修正照片方向 */
         self.originalImage = [self fixOrientation:originalImage];
     }
     return self;
@@ -51,17 +58,9 @@
 {
     [super viewDidLoad];
     [self initView];
+    [self updateView];
     [self initControlBtn];
-//    [self.navigationController.navigationBar setHidden:YES];
 }
-
-- (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleDefault;
-}
-
-//- (BOOL)prefersStatusBarHidden{
-//    return YES;
-//}
 
 - (void)dealloc {
     self.originalImage = nil;
@@ -77,43 +76,36 @@
 
 - (void)initView {
     self.view.backgroundColor = [UIColor blackColor];
-    
-    self.showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-    [self.showImgView setMultipleTouchEnabled:YES];
-    [self.showImgView setUserInteractionEnabled:YES];
-    [self.showImgView setImage:self.originalImage];
-    [self.showImgView setUserInteractionEnabled:YES];
-    [self.showImgView setMultipleTouchEnabled:YES];
-    
-    // scale to fit the screen
+    // 2.添加展示照片视图
+    [self.view addSubview:self.showImgView];
+    // 3.按照裁剪框的宽度来缩放照片
     CGFloat oriWidth = self.cropFrame.size.width;
     CGFloat oriHeight = self.originalImage.size.height * (oriWidth / self.originalImage.size.width);
     CGFloat oriX = self.cropFrame.origin.x + (self.cropFrame.size.width - oriWidth) / 2;
     CGFloat oriY = self.cropFrame.origin.y + (self.cropFrame.size.height - oriHeight) / 2;
     self.oldFrame = CGRectMake(oriX, oriY, oriWidth, oriHeight);
+    // 4.照片视图位置尺寸
+    self.showImgView.frame = self.oldFrame;
+    // 5.最终位置尺寸
     self.latestFrame = self.oldFrame;
-//    self.showImgView.frame = self.oldFrame;
-    self.showImgView.frame = CGRectMake(0, 0, oriWidth, oriHeight);
-    
+    // 6.限制最大尺寸
     self.largeFrame = CGRectMake(0, 0, self.limitRatio * self.oldFrame.size.width, self.limitRatio * self.oldFrame.size.height);
-    
-    [self addGestureRecognizers];
-    [self.view addSubview:self.showImgView];
-    
-    self.overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
-    self.overlayView.alpha = .5f;
-    self.overlayView.backgroundColor = [UIColor blackColor];
-    self.overlayView.userInteractionEnabled = NO;
-    self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    // 7.添加背景视图
     [self.view addSubview:self.overlayView];
-    
-    self.ratioView = [[UIView alloc] initWithFrame:self.cropFrame];
-    self.ratioView.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.ratioView.layer.borderWidth = 1.0f;
-    self.ratioView.autoresizingMask = UIViewAutoresizingNone;
+    // 8.添加裁剪框视图
     [self.view addSubview:self.ratioView];
-    
+    // 9.添加蒙版视图
     [self overlayClipping];
+}
+
+- (void)updateView{
+    if (self.isAllowEditing) {
+        // 1.添加拖动手势
+        [self addGestureRecognizers];
+        self.ratioView.hidden = NO;
+    }else{
+        self.ratioView.hidden = YES;
+    }
 }
 
 - (void)initControlBtn {
@@ -143,7 +135,7 @@
     [self.view addSubview:confirmBtn];
 }
 
-#pragma mark -
+#pragma mark - ButtonHandler
 - (void)cancel:(id)sender {
     for (UIView * view in self.view.subviews) {
         [view removeFromSuperview];
@@ -155,14 +147,17 @@
 
 - (void)confirm:(id)sender {
     if (self.delegate && [self.delegate conformsToProtocol:@protocol(ZJCCameraCropViewControllerDelegate)]) {
-        [self.delegate imageCropper:self didFinishi:[self getSubImage]];
+        if (self.isAllowEditing) {
+            [self.delegate imageCropper:self didFinishi:[self getSubImage]];
+        }else{
+            [self.delegate imageCropper:self didFinishi:self.originalImage];
+        }
         for (UIView * view in self.view.subviews) {
             [view removeFromSuperview];
         }
     }
 }
-#pragma mark -
-
+#pragma mark - PrivateFunction
 - (void)overlayClipping
 {
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
@@ -383,5 +378,39 @@
     return img;
 }
 
+
+#pragma mark - lazyLoad
+- (UIImageView *)showImgView{
+    if (!_showImgView) {
+        _showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        [_showImgView setMultipleTouchEnabled:YES];
+        [_showImgView setUserInteractionEnabled:YES];
+        [_showImgView setImage:self.originalImage];
+        [_showImgView setUserInteractionEnabled:YES];
+        [_showImgView setMultipleTouchEnabled:YES];
+    }
+    return _showImgView;
+}
+
+- (UIView *)overlayView{
+    if (!_overlayView) {
+        _overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _overlayView.alpha = .5f;
+        _overlayView.backgroundColor = [UIColor blackColor];
+        _overlayView.userInteractionEnabled = NO;
+        _overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    }
+    return _overlayView;
+}
+
+- (UIView *)ratioView{
+    if (!_ratioView) {
+        _ratioView = [[UIView alloc] initWithFrame:self.cropFrame];
+        _ratioView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _ratioView.layer.borderWidth = 1.0f;
+        _ratioView.autoresizingMask = UIViewAutoresizingNone;
+    }
+    return _ratioView;
+}
 
 @end

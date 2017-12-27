@@ -27,6 +27,7 @@
     // 图片
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
     self.imageView.center = CGPointMake(self.view.center.x, self.view.bounds.size.width/2.0);
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
     [self.view addSubview:self.imageView];
     
